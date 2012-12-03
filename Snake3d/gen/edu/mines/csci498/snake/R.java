@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package edu.mines.csci498.snake3d;
+package edu.mines.csci498.snake;
 
 public final class R {
     public static final class attr {
@@ -15,7 +15,8 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int about=0x7f070000;
+        public static final int about=0x7f070001;
+        public static final int snake=0x7f070000;
     }
     public static final class layout {
         public static final int main=0x7f030000;
