@@ -14,5 +14,10 @@ public class Snake extends Activity {
 		setContentView(R.layout.main);
 		
 		GameView game = (GameView) findViewById(R.id.snake);
+		TextView status = (TextView) findViewById(R.id.status);
+		game.setStatusTextView(status);
+		game.setOnTouchListener(game);
+		game.setMode(GameView.MENU);
+		
 	}
 }
