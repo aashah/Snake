@@ -3,6 +3,7 @@ package edu.mines.csci498.snake;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -100,6 +101,8 @@ public class BoardView extends View {
 	@Override
 	public void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
+		
+		mPaint.setAlpha(255);
 		
 		for (int i = 0; i < mNumberTilesX; ++i) {
 			for (int j = 0; j < mNumberTilesY; ++j) {

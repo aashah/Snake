@@ -1,6 +1,7 @@
 package edu.mines.csci498.snake;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class Snake extends Activity {
 		TextView status = (TextView) findViewById(R.id.status);
 		game.setStatusTextView(status);
 		game.setOnTouchListener(game);
+		game.setBackgroundColor(Color.BLACK);
 		game.setMode(GameView.MENU);
 		
 	}
