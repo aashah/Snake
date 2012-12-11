@@ -106,6 +106,10 @@ public class GameView extends BoardView implements View.OnTouchListener {
 	}
 	
 	public void initSnake() {
+		mSnake.clear();
+		mApples.clear();
+		mObstacles.clear();
+		
 		//add beginning snake body & direction
 		mSnake.add(new Point(4, 10));
 		mSnake.add(new Point(5, 10));
@@ -176,6 +180,8 @@ public class GameView extends BoardView implements View.OnTouchListener {
 			mStatus.setText("");
 			update();
 			return;
+		} else if (mState == LOSE) {
+			mStatus.setText("Game over! Press Up to play again. Final score: " + mNumberOfApples);
 		}
 	}
 	
@@ -292,6 +298,7 @@ public class GameView extends BoardView implements View.OnTouchListener {
 			setTile(pos.x, pos.y, SNAKE_BODY);
 		}
 		
+		mStatus.setText("Number of apples: " + mNumberOfApples);
 	}
 	
 	/**
