@@ -30,7 +30,7 @@ public class GameView extends BoardView implements View.OnTouchListener {
 	
 	//Score & move delay
 	private int mNumberOfApples = 0;
-	private long mSpeed = 1000;
+	private long mSpeed = 500;
 	private long mLastTick;
 	
 	 /* 
@@ -273,14 +273,16 @@ public class GameView extends BoardView implements View.OnTouchListener {
 		if ((whichApple = getCollidePoint(nextPosition, mApples)) != null) {
 			grow = true;
 			mApples.remove(whichApple);
-			mSpeed *= .5;
 			mNumberOfApples++;
+			if (mNumberOfApples % 5 == 0)
+				mSpeed *= .5;
 		}
 		
 		//if no collision, add nextPosition as head. If we are *not* growing, remove the tail too
 		mSnake.add(0, nextPosition);
 		if (!grow) {
 			mSnake.remove(mSnake.size() -1);
+		} else {
 			addRandomApple();
 		}
 		
